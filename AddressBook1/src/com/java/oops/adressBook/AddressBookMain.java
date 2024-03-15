@@ -21,6 +21,10 @@ public class AddressBookMain
 				  contact.Addcontact();
 				  break;
 				  
+			    case 2 :
+			    	contact.Editcontact();
+			    	break;
+				  
 				default : 
 					System.out.println("Invalid Choice...");
 					break;
