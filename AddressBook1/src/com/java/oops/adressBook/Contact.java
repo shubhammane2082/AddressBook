@@ -46,8 +46,10 @@ public class Contact
 		String email=sc.next();
 		person.setEmail(email);
 		
+		
 		contactList.add(person);
 		System.out.println(contactList);
+		System.out.println("Contact Added Sucessfully...");
 	}
 	
 	public void Editcontact()
@@ -108,6 +110,23 @@ public class Contact
 							break;			
 				}
 		}
+			System.out.println("Contact Edited Sucessfully...");
 	 }
    }
+	
+	public void Deletecontact()
+	{
+		System.out.println("Enter your first Name : ");
+		String firstName=sc.next();
+		for(int i=0;i<contactList.size();i++)
+		{
+			Person person=contactList.get(i);
+			if(person.getFirstName().equals(firstName))
+			{
+				contactList.remove(i);
+			}
+		}
+		System.out.println("Delete Sucessfully...");
+		System.out.println(contactList);
+	}
 }
