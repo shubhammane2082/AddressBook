@@ -6,7 +6,12 @@ import java.util.Scanner;
 
 public class Contact 
 {
-	List<Person> contactList=new ArrayList<>();
+	List<Person> contactList;
+	
+	public Contact()
+	{
+		this.contactList=new ArrayList<>();
+	}
 	
 	Scanner sc=new Scanner(System.in);
 	
@@ -42,7 +47,7 @@ public class Contact
 		String phone_Number=sc.next();
 		person.setPhone_Number(phone_Number);
 		
-		System.out.println("Enter your city : ");
+		System.out.println("Enter your Email : ");
 		String email=sc.next();
 		person.setEmail(email);
 		
@@ -126,6 +131,7 @@ public class Contact
 			}
 		}
 		System.out.println("Delete Sucessfully...");
+		System.out.println(contactList);
 	}
 	
 	public void showAllcontact()
@@ -133,15 +139,16 @@ public class Contact
 		for(int i=0;i<contactList.size();i++)
 		{
 			Person person=contactList.get(i);
-			System.out.println("   Person First Name is : "+person.getFirstName());
-			System.out.println("   Person Last Name is : "+person.getLastName());
-			System.out.println("   Person Address is : "+person.getAddress());
-			System.out.println("   Person City is "+person.getCity());
-			System.out.println("   Person State is "+person.getState());
-			System.out.println("   Person ZIP code is "+person.getZIP());
-			System.out.println("   Person Phone Number is : "+person.getPhone_Number());
-			System.out.println("   Person Email is : "+person.getEmail());
-			System.out.println("----------------------------------------------------------------------------------");
+			System.out.println("   ----------------------------------------------------------------------------------");
+			System.out.println("   First Name is : "+person.getFirstName());
+			System.out.println("   Last Name is : "+person.getLastName());
+			System.out.println("   Address is : "+person.getAddress());
+			System.out.println("   City is "+person.getCity());
+			System.out.println("   State is "+person.getState());
+			System.out.println("   ZIP code is "+person.getZIP());
+			System.out.println("   Phone Number is : "+person.getPhone_Number());
+			System.out.println("   Email is : "+person.getEmail());
+			System.out.println("   ----------------------------------------------------------------------------------");
 		}
 	}
 }
