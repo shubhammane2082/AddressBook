@@ -11,12 +11,16 @@ public class AddressBookMain
 		int choice;
 		
 		do {
-			System.out.println("1.Add contact 2.Edit Contact 3.Delete Contact 4.Show All Contact 5.Exit");
+			System.out.println("0.Exit 1.Add contact 2.Edit Contact 3.Delete Contact 4.Show All Contact");
 			System.out.println("Enter your choice : ");
 			choice=sc.nextInt();
 			
 			switch(choice)
 			{ 
+			   case 0 :
+				  System.out.println("Exiting Application...");
+				  break;
+				
 			    case 1 : 
 				  contact.Addcontact();
 				  break;
@@ -27,6 +31,10 @@ public class AddressBookMain
 				  
 			    case 3 : 
 			    	contact.Deletecontact();
+			    	break;
+			    	
+			    case 4 : 
+			    	contact.showAllcontact();
 			    	break;
 			    	
 				default : 

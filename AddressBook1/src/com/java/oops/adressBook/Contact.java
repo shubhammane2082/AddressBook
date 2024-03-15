@@ -48,7 +48,6 @@ public class Contact
 		
 		
 		contactList.add(person);
-		System.out.println(contactList);
 		System.out.println("Contact Added Sucessfully...");
 	}
 	
@@ -110,8 +109,8 @@ public class Contact
 							break;			
 				}
 		}
-			System.out.println("Contact Edited Sucessfully...");
 	 }
+		System.out.println("Contact Edited Sucessfully...");
    }
 	
 	public void Deletecontact()
@@ -127,6 +126,22 @@ public class Contact
 			}
 		}
 		System.out.println("Delete Sucessfully...");
-		System.out.println(contactList);
+	}
+	
+	public void showAllcontact()
+	{
+		for(int i=0;i<contactList.size();i++)
+		{
+			Person person=contactList.get(i);
+			System.out.println("   Person First Name is : "+person.getFirstName());
+			System.out.println("   Person Last Name is : "+person.getLastName());
+			System.out.println("   Person Address is : "+person.getAddress());
+			System.out.println("   Person City is "+person.getCity());
+			System.out.println("   Person State is "+person.getState());
+			System.out.println("   Person ZIP code is "+person.getZIP());
+			System.out.println("   Person Phone Number is : "+person.getPhone_Number());
+			System.out.println("   Person Email is : "+person.getEmail());
+			System.out.println("----------------------------------------------------------------------------------");
+		}
 	}
 }
