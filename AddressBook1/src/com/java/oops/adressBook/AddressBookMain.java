@@ -11,17 +11,17 @@ public class AddressBookMain
 		AddressBookMain addressBookmain=new AddressBookMain();
 		Scanner sc=new Scanner(System.in);
 		int choice;
-		
+		System.out.println("----  Welcome to Address Book -------"+"\n");
 		while(true)
 		{
-			System.out.println("0.Exit 1.Add Adress Book 2.Use Address Book");
+			System.out.println("0.Exit \n1.Add Adress Book \n2.Use Address Book"+"\n");
 			System.out.println("Enter your choice : ");
 			choice=sc.nextInt();
 			
 			switch(choice)
 			{
 			   case 0 :
-			           System.out.println("Exiting the Application...");
+			           System.out.println("Exiting the Application..."+"\n");
 			           break; 
 			           
 			   case 1 :
