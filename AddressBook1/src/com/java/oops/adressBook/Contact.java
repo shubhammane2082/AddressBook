@@ -23,6 +23,13 @@ public class Contact
 		String firstName=sc.next();
 		person.setFirstName(firstName);
 		
+		boolean matchfirstName=contactList.stream().anyMatch(contact -> contact.getFirstName().equals(firstName));
+		if(matchfirstName)
+		{
+			System.out.println("User with same name already present...");
+			return;
+		}
+		
 		System.out.println("Enter your Last Name : ");
 		String lastName=sc.next();
 		person.setLastName(lastName);
@@ -50,7 +57,6 @@ public class Contact
 		System.out.println("Enter your Email : ");
 		String email=sc.next();
 		person.setEmail(email);
-		
 		
 		contactList.add(person);
 		System.out.println("Contact Added Sucessfully...");
@@ -114,7 +120,7 @@ public class Contact
 							break;			
 				}
 		}
-	 }
+	}
 		System.out.println("Contact Edited Sucessfully...");
    }
 	

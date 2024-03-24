@@ -43,7 +43,6 @@ public class AddressBookManager
 			{ 
 			   case 0 :
 				  System.out.println("Exiting Address Book "+addressBookname+"...");
-				  sc.close();
 				  break;
 				
 			    case 1 : 

@@ -22,7 +22,6 @@ public class AddressBookMain
 			{
 			   case 0 :
 			           System.out.println("Exiting the Application...");
-			           sc.close();
 			           break; 
 			           
 			   case 1 :
