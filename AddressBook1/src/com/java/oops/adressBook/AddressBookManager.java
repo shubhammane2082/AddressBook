@@ -114,8 +114,10 @@ public class AddressBookManager
 			else {
 				System.out.println("There is no any person with "+city+ " you entered");
 		    }
+			int count=(int) cityName.stream().count();
 			citys.put(city, cityName);
 			System.out.println("City list is :"+citys);
+			System.out.println("Count of city "+city+" is : "+count);
 		}
 	}
 
@@ -146,8 +148,11 @@ public class AddressBookManager
 			}else {
 				System.out.println("There is no any person with state you entered");
 			}
+			int count=(int) stateName.stream().count();
 			states.put(state, stateName);
 			System.out.println("State is :"+states);
+			System.out.println("Count of state "+state+" is : "+count);
+			
 			
 		}
 		
