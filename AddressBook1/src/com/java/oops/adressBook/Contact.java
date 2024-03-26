@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 public class Contact 
 {
 	List<Person> contactList;
+	static Person person;
 	
 	public Contact()
 	{
@@ -65,6 +66,7 @@ public class Contact
 		person.setEmail(email);
 		
 		contactList.add(person);
+		Collections.sort(contactList, Comparator.comparing(c -> c.getFirstName()));
 		System.out.println("Contact Added Sucessfully...");
 	}
 	
@@ -176,9 +178,5 @@ public class Contact
 		return contactList.stream()
 		                           .filter(city -> city.getCity().equalsIgnoreCase(city1))
 		                           .collect(Collectors.toList());
-		                           
 	}
-
-	
-
 }

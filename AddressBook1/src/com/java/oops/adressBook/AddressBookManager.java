@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Scanner;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class AddressBookManager 
 {
@@ -43,7 +45,7 @@ public class AddressBookManager
         int choice;
 		
 		do {
-			System.out.println("0.Exit \n1.Add contact \n2.Edit Contact \n3.Delete Contact \n4.Show All Contact \n5.search by state \n6.search by city \n7.sort By city");
+			System.out.println("0.Exit \n1.Add contact \n2.Edit Contact \n3.Delete Contact \n4.Show All Contact \n5.search by state \n6.search by city \n7.sort alphabetically \n8.sort By city ");
 			System.out.println("Enter your choice : ");
 			choice=sc.nextInt();
 			
@@ -81,7 +83,11 @@ public class AddressBookManager
 			    	searchCity(AddressBooks,city);
 			    	break;	
 			    	
-			    case 7:
+			    case 7 :
+			    	sortAlphabetically();
+			    	break;
+			    	
+			    case 8:
 			        System.out.println("Enter the city name to sort by city: ");
 			        String city1 = sc.next();
 			        sortyBycity(city1);
@@ -92,6 +98,12 @@ public class AddressBookManager
 					break;
 			}
 		}while(choice !=0);
+	}
+	private static void sortAlphabetically() {
+		AddressBooks.entrySet().stream()
+		                                .sorted(Map.Entry.comparingByKey())
+		                                .collect(Collectors.toList())
+		                                .forEach(n -> System.out.println(n));		
 	}
 
 	private static void sortyBycity(String city1) 
@@ -106,7 +118,7 @@ public class AddressBookManager
 				
 				for(Person person : searchbyCity)
 				{
-					System.out.println(person);
+					System.out.println(person.getFirstName());
 				}
 			}
 			return;
