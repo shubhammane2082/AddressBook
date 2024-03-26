@@ -5,7 +5,7 @@ public class Person
 	private String firstName;
 	private String lastName;
 	private String address;
-	private String city;
+	String city;
 	private String state;
 	private String ZIP;
 	private String phone_Number;

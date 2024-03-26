@@ -1,6 +1,8 @@
 package com.java.oops.adressBook;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -41,7 +43,7 @@ public class AddressBookManager
         int choice;
 		
 		do {
-			System.out.println("0.Exit \n1.Add contact \n2.Edit Contact \n3.Delete Contact \n4.Show All Contact \n5.search by state \n6.search by city");
+			System.out.println("0.Exit \n1.Add contact \n2.Edit Contact \n3.Delete Contact \n4.Show All Contact \n5.search by state \n6.search by city \n7.sort By city");
 			System.out.println("Enter your choice : ");
 			choice=sc.nextInt();
 			
@@ -79,12 +81,39 @@ public class AddressBookManager
 			    	searchCity(AddressBooks,city);
 			    	break;	
 			    	
+			    case 7:
+			        System.out.println("Enter the city name to sort by city: ");
+			        String city1 = sc.next();
+			        sortyBycity(city1);
+			        break;
+			    	
 				default : 
 					System.out.println("Invalid Choice...");
 					break;
 			}
 		}while(choice !=0);
 	}
+
+	private static void sortyBycity(String city1) 
+	{
+		for(Contact contact : AddressBooks.values())
+		{
+			List<Person> searchbyCity = contact.searchbyCity(city1);
+			if(!searchbyCity.isEmpty())
+			{
+				Collections.sort(searchbyCity, Comparator.comparing(Person::getCity));
+				System.out.println("contacts are sorted in city "+city1);
+				
+				for(Person person : searchbyCity)
+				{
+					System.out.println(person);
+				}
+			}
+			return;
+		}
+		System.out.println("person with city you entered not found...");
+	}
+	
 
 	private static void searchCity(Map<String, Contact> addressBooks, String city) 
 	{
@@ -157,6 +186,4 @@ public class AddressBookManager
 		}
 		
 	}
-
-	
 }
